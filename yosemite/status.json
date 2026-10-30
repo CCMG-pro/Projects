@@ -1,0 +1,282 @@
+{
+ "project": "Yosemite Village",
+ "association": "CDS HOA",
+ "updated": "",
+ "buildings": [
+  {
+   "id": "1101",
+   "zone": 1,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 235,
+   "y": 115,
+   "bnum": 1
+  },
+  {
+   "id": "1102",
+   "zone": 1,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 470,
+   "y": 110,
+   "bnum": 2
+  },
+  {
+   "id": "1111",
+   "zone": 1,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 130,
+   "y": 262,
+   "bnum": 3
+  },
+  {
+   "id": "1152",
+   "zone": 1,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 480,
+   "y": 300,
+   "bnum": 8
+  },
+  {
+   "id": "1151",
+   "zone": 1,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 345,
+   "y": 372,
+   "bnum": 7
+  },
+  {
+   "id": "1121",
+   "zone": 1,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 125,
+   "y": 420,
+   "bnum": 4
+  },
+  {
+   "id": "1161",
+   "zone": 2,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 380,
+   "y": 483,
+   "bnum": 9
+  },
+  {
+   "id": "1131",
+   "zone": 2,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 150,
+   "y": 495,
+   "bnum": 5
+  },
+  {
+   "id": "1141",
+   "zone": 2,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 270,
+   "y": 543,
+   "bnum": 6
+  },
+  {
+   "id": "1181",
+   "zone": 2,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 115,
+   "y": 605,
+   "bnum": 11
+  },
+  {
+   "id": "1171",
+   "zone": 2,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 370,
+   "y": 605,
+   "bnum": 10
+  },
+  {
+   "id": "1191",
+   "zone": 2,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 125,
+   "y": 765,
+   "bnum": 12
+  },
+  {
+   "id": "1213",
+   "zone": 3,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 390,
+   "y": 930,
+   "bnum": 13
+  },
+  {
+   "id": "1223",
+   "zone": 3,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 560,
+   "y": 1000,
+   "bnum": 17
+  },
+  {
+   "id": "1231",
+   "zone": 3,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 685,
+   "y": 975,
+   "bnum": 18
+  },
+  {
+   "id": "1219",
+   "zone": 3,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 615,
+   "y": 1062,
+   "bnum": 16
+  },
+  {
+   "id": "1215",
+   "zone": 3,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 361,
+   "y": 1153,
+   "bnum": 14
+  },
+  {
+   "id": "1217",
+   "zone": 3,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 558,
+   "y": 1172,
+   "bnum": 15
+  },
+  {
+   "id": "1243",
+   "zone": 3,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 665,
+   "y": 1175,
+   "bnum": 21
+  },
+  {
+   "id": "1233",
+   "zone": 4,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 771,
+   "y": 915,
+   "bnum": 19
+  },
+  {
+   "id": "1234",
+   "zone": 4,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 976,
+   "y": 857,
+   "bnum": 22
+  },
+  {
+   "id": "1254",
+   "zone": 4,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 1066,
+   "y": 923,
+   "bnum": 25
+  },
+  {
+   "id": "1241",
+   "zone": 4,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 718,
+   "y": 1062,
+   "bnum": 20
+  },
+  {
+   "id": "1251",
+   "zone": 4,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 943,
+   "y": 1153,
+   "bnum": 23
+  },
+  {
+   "id": "1253",
+   "zone": 4,
+   "status": "not_started",
+   "label": "Not started",
+   "start": "",
+   "end": "",
+   "x": 1075,
+   "y": 1103,
+   "bnum": 24
+  }
+ ]
+}

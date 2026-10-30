@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yosemite Village Exterior Project | CCMG</title>
+<meta name="description" content="Live building status, schedule, resident guide and contacts for the Yosemite Village (CDS HOA) exterior replacement project.">
+<style>
+:root{--navy:#22418A;--blue:#3B75BB;--ink:#141414;--muted:#4A5468;--ground:#F3F5F9;--card:#FFFFFF;--line:#DCE3EE;--orange:#FF5A1F;--deep:#0F1B33}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--ground);font-size:16px;line-height:1.45}
+.w{max-width:1120px;margin:0 auto;padding:0 16px}
+header{background:var(--navy);color:#fff;border-bottom:6px solid var(--orange)}
+header .w{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px}
+.logo{background:#fff;padding:7px 11px;display:inline-flex}.logo img{height:40px;display:block}
+h1{margin:0;font-size:clamp(24px,4vw,34px)}
+.sub{color:#C9D8F2;font-size:14px}
+.band{background:var(--orange);font-weight:900;padding:10px 0;letter-spacing:.5px}
+main .w{display:flex;flex-direction:column;gap:22px;padding-top:24px;padding-bottom:40px}
+.card{background:var(--card);padding:20px}
+h2{margin:0 0 12px;font-size:15px;letter-spacing:2px;text-transform:uppercase;color:var(--navy)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.kpi{background:var(--card);padding:14px;border-top:5px solid var(--navy)}.kpi b{display:block;font-size:30px}.kpi span{font-size:13px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
+@media(max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
+.map{position:relative;width:100%;aspect-ratio:1196/1320;overflow:hidden;background:#333}
+.map img{position:absolute;inset:0;width:100%;height:100%;filter:saturate(.7) brightness(.85)}
+.pin{position:absolute;transform:translate(-50%,-50%);font-size:11px;font-weight:900;padding:3px 6px;border:2px solid #fff;border-radius:12px;white-space:nowrap}
+.pin.hit{outline:4px solid #fff;z-index:2;transform:translate(-50%,-50%) scale(1.3)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:13px}.legend i{display:inline-block;width:12px;height:12px;margin-right:5px;vertical-align:-1px}
+label{font-weight:700;font-size:14px;display:block;margin-bottom:6px}
+input{font:inherit;width:100%;padding:12px;border:2px solid var(--line);min-height:48px}
+input:focus{outline:3px solid var(--orange);outline-offset:1px}
+.result{margin-top:14px;padding:16px;background:var(--deep);color:#fff;display:none}
+.result.on{display:block}
+.result b{font-size:28px}
+table{border-collapse:collapse;width:100%;font-size:14px}th{text-align:left;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);padding:8px 6px;border-bottom:2px solid var(--line)}td{padding:7px 6px;border-bottom:1px solid var(--line)}
+.tbl{overflow-x:auto;max-height:520px;overflow-y:auto}
+.pill{display:inline-block;font-size:12px;font-weight:900;padding:3px 8px}
+.dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.dl a{display:flex;flex-direction:column;gap:4px;background:var(--ground);padding:14px;text-decoration:none;color:var(--ink);border-left:6px solid var(--navy);min-height:44px}
+.dl a:hover,.dl a:focus{border-left-color:var(--orange)}
+.dl small{color:var(--muted)}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.contact div{background:var(--navy);color:#fff;padding:14px}.contact div span{display:block;font-size:12px;letter-spacing:1.5px;font-weight:900;color:#C9D8F2}
+.contact a{color:#fff}
+.btn{display:inline-block;background:var(--orange);color:#141414;font-weight:900;padding:14px 18px;text-decoration:none;min-height:48px}
+.es{color:var(--muted);font-size:.92em}
+.updated{font-size:13px;color:var(--muted)}
+footer{background:var(--navy);color:#C9D8F2;font-size:13px;padding:14px 0}
+</style>
+</head>
+<body>
+<header><div class="w">
+<div style="display:flex;gap:16px;align-items:center"><span class="logo"><img src="ccmg-logo.png" alt="CCMG"></span>
+<div><h1>Yosemite Village Exterior Project</h1><div class="sub">CDS Homeowners Association · 1250 S Yosemite Way, Denver, CO</div></div></div>
+</div></header>
+<div class="band"><div class="w">Roofs, garage roofs, gutters, windows, siding, paint and AC condensers · <span lang="es">Proyecto exterior</span></div></div>
+
+<main><div class="w">
+
+<section class="card" aria-labelledby="find">
+<h2 id="find">Find your building · <span lang="es">Busque su edificio</span></h2>
+<label for="q">Building number (for example 1213)</label>
+<input id="q" type="text" inputmode="numeric" autocomplete="off" placeholder="Building # or address, e.g. 9 or 1161">
+<div class="result" id="res" aria-live="polite"></div>
+</section>
+
+<section class="kpis" id="kpis" aria-label="Project progress"></section>
+<div class="updated" id="upd">Loading status…</div>
+
+<div class="grid">
+<section class="card" aria-labelledby="mapH"><h2 id="mapH">Site map</h2>
+<div class="map" id="map"><img src="aerial.jpg" alt="Aerial of Yosemite Village with each building marked by status"></div>
+<div class="legend" id="legend"></div>
+<p class="updated">Ring color shows the work zone. Work moves Zone 1, 2, 3, then 4.</p></section>
+<section class="card" aria-labelledby="tH"><h2 id="tH">All buildings</h2><div class="tbl"><table><thead><tr><th>Building</th><th>Zone</th><th>Status</th><th>Dates</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+</div>
+
+<section class="card" aria-labelledby="dH"><h2 id="dH">Downloads · <span lang="es">Descargas</span></h2>
+<div class="dl">
+<a href="downloads/resident-guide.pdf"><b>Resident Guide</b><small>What to expect, checklists, contacts · PDF</small></a>
+<a href="downloads/site-logistics-plan.pdf"><b>Site Logistics Plan</b><small>Gates, truck route, staging, zones · PDF</small></a>
+<a href="downloads/work-sequence.pdf"><b>Work Zones and Sequence</b><small>Which zone goes when · PDF</small></a>
+<a href="downloads/building-cycle.pdf"><b>One Building, Start to Finish</b><small>The nine steps for every building · PDF</small></a>
+<a href="downloads/communications-tree.pdf"><b>Communications Tree</b><small>Who to call and how issues are escalated · PDF</small></a>
+<a href="downloads/job-site-safety.pdf"><b>Job Site Safety</b><small>Rules every crew follows on site · PDF</small></a>
+<a href="downloads/town-hall-faq.pdf"><b>Town Hall FAQ</b><small>Answers from the resident meeting · PDF</small></a>
+</div></section>
+
+<section class="card" aria-labelledby="cH"><h2 id="cH">Questions, damage or concerns · <span lang="es">Preguntas o daños</span></h2>
+<p>Tell us the same day. Every report is logged and answered within one business day. Include your building number and a photo if you can.</p>
+<p><a class="btn" href="mailto:spencer@ccmgpro.com?subject=Yosemite%20Village%20-%20Building%20___">Email the project team</a></p>
+<div class="contact">
+<div><span>CCMG PROJECT MANAGER</span><b>Spencer Shaw</b><br>(860) 733-3435<br><a href="mailto:spencer@ccmgpro.com">spencer@ccmgpro.com</a></div>
+<div><span>COMMUNITY MANAGER</span><b>Melissa Stern</b><br>ACCU, Inc.<br>(303) 733-1121<br>mstern@accuinc.com</div>
+<div><span>EMERGENCY</span><b>Call 911</b><br>then the PM</div>
+</div>
+</section>
+
+</div></main>
+<footer><div class="w">Claims &amp; Construction Management Group · Licensed General Contractor · 1776 S Jackson St, Suite 518, Denver, CO</div></footer>
+
+<script>
+(function(){
+var ZC={1:['#3B75BB','#fff'],2:['#00807F','#fff'],3:['#8E44C9','#fff'],4:['#F2C230','#141414']};
+var ST={not_started:['Not started','#DCE3EE','#141414'],notice:['Notice sent','#FFB08F','#141414'],in_work:['In work','#FF5A1F','#141414'],punch:['Punch list','#F2C230','#141414'],closed:['Complete','#1E7A46','#fff']};
+var ES={not_started:'Sin iniciar',notice:'Aviso enviado',in_work:'En obra',punch:'Detalles finales',closed:'Terminado'};
+var data=null;
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function fmt(d){if(!d)return '';var p=d.split('-');return p.length===3?(+p[1])+'/'+(+p[2]):d}
+function dates(b){return b.start?fmt(b.start)+(b.end?' to '+fmt(b.end):''):'To be scheduled'}
+function pill(s){var m=ST[s]||ST.not_started;return '<span class="pill" style="background:'+m[1]+';color:'+m[2]+'">'+m[0]+'</span>'}
+function draw(){
+var bs=data.buildings||[];var c={};Object.keys(ST).forEach(function(k){c[k]=0});bs.forEach(function(b){c[b.status]=(c[b.status]||0)+1});
+document.getElementById('kpis').innerHTML='<div class="kpi" style="border-top-color:#1E7A46"><b>'+c.closed+' / '+bs.length+'</b><span>Buildings complete</span></div><div class="kpi" style="border-top-color:#FF5A1F"><b>'+c.in_work+'</b><span>In work now</span></div><div class="kpi" style="border-top-color:#FFB08F"><b>'+c.notice+'</b><span>Notice sent</span></div><div class="kpi"><b>'+c.not_started+'</b><span>Not started</span></div>';
+var u=data.updated?new Date(data.updated):null;
+document.getElementById('upd').textContent=u?'Status updated '+u.toLocaleString([], {month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}):'Status not yet published';
+var m=document.getElementById('map');m.querySelectorAll('.pin').forEach(function(p){p.remove()});
+bs.forEach(function(b){var s=ST[b.status]||ST.not_started;var d=document.createElement('span');d.className='pin';d.id='pin-'+b.id;d.textContent=b.id;d.style.left=(b.x/1196*100)+'%';d.style.top=(b.y/1320*100)+'%';d.style.background=s[1];d.style.color=s[2];d.style.boxShadow='0 0 0 3px '+(ZC[b.zone]||ZC[1])[0];m.appendChild(d)});
+document.getElementById('legend').innerHTML=Object.keys(ST).map(function(k){return '<span><i style="background:'+ST[k][1]+'"></i>'+ST[k][0]+'</span>'}).join('');
+document.getElementById('rows').innerHTML=bs.map(function(b){var z=ZC[b.zone]||ZC[1];return '<tr><td><b>'+(b.bnum?'Bldg '+esc(b.bnum)+' · ':'')+esc(b.id)+'</b></td>'<td><span class="pill" style="background:'+z[0]+';color:'+z[1]+'">'+esc(b.zone)+'</span></td><td>'+pill(b.status)+'</td><td>'+esc(dates(b))+'</td></tr>'}).join('');
+}
+function find(){
+var q=document.getElementById('q').value.trim().toUpperCase();var r=document.getElementById('res');
+document.querySelectorAll('.pin.hit').forEach(function(p){p.classList.remove('hit')});
+if(!q||!data){r.className='result';return}
+var b=(data.buildings||[]).filter(function(x){return String(x.id).toUpperCase()===q||String(x.bnum)===q.replace(/^(BLDG|BUILDING)\s*/,'')})[0];
+if(!b){r.className='result on';r.innerHTML='No building '+esc(q)+' found. Check the number on your building, or call the PM.';return}
+var s=ST[b.status]||ST.not_started;
+r.className='result on';r.innerHTML='<b>Building '+(b.bnum?esc(b.bnum)+' · ':'')+esc(b.id)+'</b>' · Zone '+esc(b.zone)+'<br>'+pill(b.status)+' <span lang="es" style="color:#C9D8F2">'+ES[b.status]+'</span><br>Dates: '+esc(dates(b));
+var p=document.getElementById('pin-'+b.id);if(p)p.classList.add('hit');
+}
+document.getElementById('q').addEventListener('input',find);
+fetch('status.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){data=j;draw();find()}).catch(function(){document.getElementById('upd').textContent='Live status is temporarily unavailable. Call the PM for your building dates.'});
+})();
+</script>
+</body>
+</html>
